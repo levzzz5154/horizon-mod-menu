@@ -93,16 +93,15 @@ pub fn clean(text: &str) -> String {
 impl InstalledMod {
     pub fn row(&self) -> String {
         format!(
-            "{} {} | {} | {}",
-            clean(&self.name),
-            clean(&self.version),
-            clean(&self.kind),
+            "{} {} [{}]",
+            clean(&self.name).chars().take(18).collect::<String>(),
+            clean(&self.version).chars().take(8).collect::<String>(),
             if self.problem.is_some() {
                 "Invalid"
             } else if self.enabled {
-                "Enabled"
+                "On"
             } else {
-                "Disabled"
+                "Off"
             }
         )
     }

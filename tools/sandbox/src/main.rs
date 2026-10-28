@@ -46,12 +46,13 @@ fn main() {
     assert!(
         rows(&mods)
             .iter()
-            .any(|r| r.contains("Veinminer") && r.contains("Native") && r.contains("Enabled"))
+            .any(|r| r.contains("Veinminer") && r.contains("[On]"))
     );
     mods.ui_select(0, 2, 0);
     assert_eq!(rows(&mods).len(), 1);
     mods.ui_select(0, 1, 0);
     assert!(text(&mods).contains("ID: veinminer"));
+    assert!(text(&mods).contains("Type: Native"));
     mods.ui_select(0, 2, 0);
     assert_eq!(rows(&mods).len(), 20);
     mods.ui_select(0, 2, 0);

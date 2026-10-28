@@ -69,10 +69,7 @@ impl ModMenu {
                     self.mods.iter().filter(|m| m.enabled).count()
                 ),
             ),
-            text(
-                11,
-                "Installed state from your launcher; changes apply on the next launch.",
-            ),
+            text(11, "Changes apply on the next launch."),
         ];
         if let Some(error) = &self.error {
             widgets.push(text(12, error));

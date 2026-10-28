@@ -15,7 +15,7 @@ This is not a port of another project's Mod Menu and includes no Minecraft asset
 
 Built against Minecraft 26.3 / Horizon nightly `83f15fa27` using mod API 0.1,
 API level 0. Uses only `ui`, `input` and its own `storage` capabilities. It needs
-**a launcher with the Mod Menu inventory feed** to enumerate installed mods.
+**a launcher with the Mod Menu inventory feed** ([Horizon #3112](https://github.com/horizon-rust/horizon/pull/3112)) to enumerate installed mods.
 On a launcher without the feed it shows an explicit update message, not a false
 empty list. Other Horizon revisions have unverified support.
 

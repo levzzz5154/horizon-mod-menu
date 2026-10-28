@@ -46,5 +46,5 @@ fn mod_names_cannot_inject_legacy_colors_or_multiline_rows() {
     assert_eq!(model::clean(&"界".repeat(500)).chars().count(), 180);
     let mut broken = installed("broken", true);
     broken.problem = Some("Invalid package".into());
-    assert!(broken.row().ends_with("Invalid"));
+    assert!(broken.row().ends_with("[Invalid]"));
 }
