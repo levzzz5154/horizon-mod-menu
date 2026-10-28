@@ -1,0 +1,22 @@
+name: check
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all --check
+      - run: cargo clippy --all-targets --locked -- -D warnings
+      - run: cargo test --locked
+      - run: cargo install --locked --git https://github.com/horizon-rust/horizon --rev 83f15fa276c44711276b6ceb5f0fe0c9c534dc66 cargo-horizon-mod
+      - run: cargo horizon-mod build
+      - run: cargo horizon-mod check target/horizon-mod/mod_menu.hmod
+      - run: cargo run --manifest-path tools/sandbox/Cargo.toml --locked -- target/horizon-mod/mod_menu.hmod
