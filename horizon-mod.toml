@@ -1,0 +1,9 @@
+id = "mod_menu"
+name = "Mod Menu"
+version = "0.1.0"
+description = "Browse installed sandboxed, content and native mods. Open with M or /modmenu. Requires a launcher that supplies the Mod Menu inventory feed."
+authors = ["levzzz5154"]
+api = "0.1"
+side = "client"
+capabilities = ["ui", "input", "storage"]
+experimental = ["ui", "input"]
