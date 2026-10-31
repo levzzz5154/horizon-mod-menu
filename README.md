@@ -1,5 +1,8 @@
 # Mod Menu for Horizon
 
+> **Deprecated.** Horizon now has its own built-in Mods menu, which replaces this mod.
+> It is no longer updated and is being removed from the mod registry.
+
 An independently written sandboxed `.hmod` by levzzz5154. Browse the mods installed
 in the current Horizon instance, including native source mods and disabled mods.
 This is not a port of another project's Mod Menu and includes no Minecraft assets.
